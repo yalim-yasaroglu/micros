@@ -1,14 +1,4 @@
 spring:
-  datasource:
-    url: jdbc:h2:mem:productdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
   kafka:
     bootstrap-servers: kafka1:9092
     producer:
@@ -20,4 +10,5 @@ spring:
           json:
             trusted:
               packages: tr.com.aselsan.uhkks.kafkabase
-  port: 8081
+server:
+  port: 8083
