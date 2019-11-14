@@ -43,6 +43,6 @@ public class ProductService {
   }
 
   public Product getProductById(UUID id) {
-    return repo.getOne(id);
+    return repo.findById(id).get();
   }
 }

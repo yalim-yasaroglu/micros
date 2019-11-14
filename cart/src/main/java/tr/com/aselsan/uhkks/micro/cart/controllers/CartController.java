@@ -19,21 +19,14 @@ public class CartController {
   private CartService service;
 
   @PutMapping("{id}")
-  public Cart createCart(@PathVariable("id") UUID productId){
+  public Cart createCart(@PathVariable("id") UUID productId) throws Exception {
     return service.createCart(productId);
   }
-  /*@PostMapping
-  public Cart addProductToCart(UUID productId, UUID cartId){
-    return null;
+
+  @PutMapping("/buy/{id}")
+  public boolean buy(@PathVariable("id") UUID cartId){
+    return service.buy(cartId);
   }
-  @PostMapping
-  public Cart removeProductFromCart(UUID productId, UUID cartId){
-    return null;
-  }
-  @PutMapping
-  public boolean buy(UUID id){
-    return false;
-  }*/
 
   @GetMapping
   public List<Cart> getCarts(){
