@@ -25,7 +25,7 @@ public class KafkaContoller {
 
   @Autowired
   private SimpMessagingTemplate simpMessagingTemplate;
-
+//@KafkaListener kafka protokolu
   @KafkaListener(topics = {"api-gw"}, groupId = "1")
   public void listen(MessageCarrier carrier) throws Exception {
     final ObjectMapper mapper = new ObjectMapper();
@@ -34,6 +34,7 @@ public class KafkaContoller {
 
   }
 
+  //@MessageMapping stomp protokolu
   @MessageMapping("/product")
   public String sendToProduct(MessageCarrier carrier){
     template.send("product", carrier);
@@ -42,7 +43,7 @@ public class KafkaContoller {
 
   @MessageMapping("/cart")
   public String sendToCart(MessageCarrier carrier){
-    template.send("product", carrier);
+    template.send("cart", carrier);
     return "sent!";
   }
 

@@ -48,7 +48,7 @@ public class ProductController {
 
   @GetMapping("{id}")
   public Product getById(@PathVariable("id") UUID id){
-    return service.getProductById(id);
+    return service.getProductById(id).get();
   }
 
 

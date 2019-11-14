@@ -7,6 +7,7 @@ public enum MessageType {
   GET_ALL ("get_all"),
   GET_BY_ID ("get_by_id"),
   SEARCH ("search"),
+  GET_BY_ID_FOR_CART("get_buy_id_for_cart"),
   RESULT ("result");
 
   private String type;

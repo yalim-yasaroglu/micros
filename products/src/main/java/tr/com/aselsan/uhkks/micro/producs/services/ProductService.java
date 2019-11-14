@@ -1,6 +1,7 @@
 package tr.com.aselsan.uhkks.micro.producs.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,7 +43,7 @@ public class ProductService {
     return true;
   }
 
-  public Product getProductById(UUID id) {
-    return repo.getOne(id);
+  public Optional<Product> getProductById(UUID id) {
+    return repo.findById(id);
   }
 }
